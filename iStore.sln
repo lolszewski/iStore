@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{581FB1B0-6C22-4288-81EA-8C40CCB1E7FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{70260CE0-7AE4-4857-9565-6609ABA21F5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{954E508A-69FE-439D-94D9-430A4F543BA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5F78765A-59AB-4A98-B775-B9F38D0C79AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iStoreSystem", "iStoreSystem\iStoreSystem.csproj", "{CAB5FD54-D71D-48C6-8FF3-2C4D0CF0D626}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessServicesMeta", "Libraries\Business\Services\BusinessServicesMeta\BusinessServicesMeta.csproj", "{3B3EF7CD-E4F3-4777-800A-356840C585D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessModelMeta", "Libraries\Business\Model\BusinessModelMeta\BusinessModelMeta.csproj", "{4770871D-8C43-4EEF-8E9A-9D16F8397B02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{0BBDB126-9D3B-4B74-9F0F-0F8E106E4D16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{900F7442-BE55-4801-8CBD-95529E23B671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iStoreConsole", "Applications\Console\iStoreConsole\iStoreConsole\iStoreConsole.csproj", "{ADD56D14-4302-4557-B3A2-476EDA7FC67F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAB5FD54-D71D-48C6-8FF3-2C4D0CF0D626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB5FD54-D71D-48C6-8FF3-2C4D0CF0D626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB5FD54-D71D-48C6-8FF3-2C4D0CF0D626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB5FD54-D71D-48C6-8FF3-2C4D0CF0D626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3EF7CD-E4F3-4777-800A-356840C585D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3EF7CD-E4F3-4777-800A-356840C585D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3EF7CD-E4F3-4777-800A-356840C585D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3EF7CD-E4F3-4777-800A-356840C585D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4770871D-8C43-4EEF-8E9A-9D16F8397B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4770871D-8C43-4EEF-8E9A-9D16F8397B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4770871D-8C43-4EEF-8E9A-9D16F8397B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4770871D-8C43-4EEF-8E9A-9D16F8397B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD56D14-4302-4557-B3A2-476EDA7FC67F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD56D14-4302-4557-B3A2-476EDA7FC67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD56D14-4302-4557-B3A2-476EDA7FC67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD56D14-4302-4557-B3A2-476EDA7FC67F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70260CE0-7AE4-4857-9565-6609ABA21F5D} = {581FB1B0-6C22-4288-81EA-8C40CCB1E7FD}
+		{954E508A-69FE-439D-94D9-430A4F543BA2} = {70260CE0-7AE4-4857-9565-6609ABA21F5D}
+		{5F78765A-59AB-4A98-B775-B9F38D0C79AA} = {70260CE0-7AE4-4857-9565-6609ABA21F5D}
+		{3B3EF7CD-E4F3-4777-800A-356840C585D4} = {5F78765A-59AB-4A98-B775-B9F38D0C79AA}
+		{4770871D-8C43-4EEF-8E9A-9D16F8397B02} = {954E508A-69FE-439D-94D9-430A4F543BA2}
+		{900F7442-BE55-4801-8CBD-95529E23B671} = {0BBDB126-9D3B-4B74-9F0F-0F8E106E4D16}
+		{ADD56D14-4302-4557-B3A2-476EDA7FC67F} = {900F7442-BE55-4801-8CBD-95529E23B671}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18A1AB14-A704-4F6F-8C48-24E3C114C8E0}
+	EndGlobalSection
+EndGlobal

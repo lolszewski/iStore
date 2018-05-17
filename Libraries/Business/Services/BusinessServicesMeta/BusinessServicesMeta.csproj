@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>iStore.Libraries.Business.Services.BusinessServicesMeta</RootNamespace>
+    <AssemblyName>iStore.Libraries.Business.Services.BusinessServicesMeta</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Model\BusinessModelMeta\BusinessModelMeta.csproj" />
+  </ItemGroup>
+
+</Project>
