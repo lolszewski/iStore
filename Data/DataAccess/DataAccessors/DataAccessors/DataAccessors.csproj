@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>iStore.Data.Access.DataAccessors</RootNamespace>
+    <AssemblyName>iStore.Data.Access.DataAccessors</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessMeta\DataAccessMeta\DataAccessMeta.csproj" />
+  </ItemGroup>
+
+</Project>

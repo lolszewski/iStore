@@ -6,4 +6,8 @@
     <AssemblyName>iStore.Libraries.Business.Model.BusinessModelMeta</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Data\Model\DataModelMeta\DataModelMeta.csproj" />
+  </ItemGroup>
+
 </Project>
