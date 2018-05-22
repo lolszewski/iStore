@@ -11,5 +11,12 @@ namespace iStore.Tests.Common.ClassLoadingTests
             var classes = ClassesLoader.Instance.GetAll();
             Assert.NotEmpty(classes);
         }
+
+        [Fact]
+        public void ShouldLoadClasses2()
+        {
+            var classes = ClassesLoader.Instance.GetAll();
+            Assert.NotEmpty(classes);
+        }
     }
 }

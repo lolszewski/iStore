@@ -13,5 +13,13 @@ namespace iStore.Tests.Common.ClassLoadingTests
             Assert.NotNull(implementation);
             Assert.Equal("123", implementation.FakeMethod());
         }
+
+        [Fact]
+        public void ShouldLoadServiceImplementation2()
+        {
+            var implementation = ServiceLoader.Instance.GetService<FakeNonGenericInterface>();
+            Assert.NotNull(implementation);
+            Assert.Equal("123", implementation.FakeMethod());
+        }
     }
 }

@@ -11,6 +11,13 @@ namespace iStore.Tests.Common.ClassLoadingTests
             var interfaces = InterfacesLoader.Instance.GetAll();
             Assert.NotEmpty(interfaces);
         }
+
+        [Fact]
+        public void ShouldLoadInterface2()
+        {
+            var interfaces = InterfacesLoader.Instance.GetAll();
+            Assert.NotEmpty(interfaces);
+        }
     }
 
     public interface FakeInterface { }

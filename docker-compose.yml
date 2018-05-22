@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  istorerestapi:
+    image: ${DOCKER_REGISTRY}istorerestapi
+    build:
+      context: .
+      dockerfile: Applications\Rest\iStoreRestApi\Dockerfile
