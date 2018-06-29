@@ -1,22 +1,18 @@
+using FluentAssertions;
 using iStore.Common.ClassLoading;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace iStore.Tests.Common.ClassLoadingTests
 {
+    [TestClass]
     public class InterfacesLoaderTests
     {
-        [Fact]
+        [TestMethod]
         public void ShouldLoadInterface()
         {
             var interfaces = InterfacesLoader.Instance.GetAll();
-            Assert.NotEmpty(interfaces);
-        }
-
-        [Fact]
-        public void ShouldLoadInterface2()
-        {
-            var interfaces = InterfacesLoader.Instance.GetAll();
-            Assert.NotEmpty(interfaces);
+            interfaces.Should().NotBeNull("InterfacesLoader returned null interfaces list");
+            interfaces.Should().NotBeEmpty("InterfacesLoader returned empty interfaces list");
         }
     }
 

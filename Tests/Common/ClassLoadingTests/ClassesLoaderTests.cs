@@ -1,22 +1,18 @@
-﻿using iStore.Common.ClassLoading;
-using Xunit;
+﻿using FluentAssertions;
+using iStore.Common.ClassLoading;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace iStore.Tests.Common.ClassLoadingTests
 {
+    [TestClass]
     public class ClassesLoaderTests
     {
-        [Fact]
+        [TestMethod]
         public void ShouldLoadClasses()
         {
             var classes = ClassesLoader.Instance.GetAll();
-            Assert.NotEmpty(classes);
-        }
-
-        [Fact]
-        public void ShouldLoadClasses2()
-        {
-            var classes = ClassesLoader.Instance.GetAll();
-            Assert.NotEmpty(classes);
+            classes.Should().NotBeNull("Classes loader returned null classes list");
+            classes.Should().NotBeEmpty("Classes loader returned empty classes list");
         }
     }
 }

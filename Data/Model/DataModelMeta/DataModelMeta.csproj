@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>iStore.Data.Model.DataModelMeta</RootNamespace>
     <AssemblyName>iStore.Data.Model.DataModelMeta</AssemblyName>
   </PropertyGroup>
