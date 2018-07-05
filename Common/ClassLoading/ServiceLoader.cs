@@ -11,11 +11,13 @@ namespace iStore.Common.ClassLoading
     {
         public static readonly ServiceLoader Instance = new ServiceLoader();
 
-        private AssemblyLoader AssemblyLoader = new AssemblyLoader(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase));
+        private readonly AssemblyLoader AssemblyLoader = new AssemblyLoader(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase));
 
-        private static Dictionary<string, Type> ServicesTypes;
+        private static readonly Dictionary<string, Type> ServicesTypes;
 
-        private static Dictionary<string, object> ServiceInstances;
+        private static readonly Dictionary<string, object> ServiceInstances;
+
+        private ServiceLoader() { }
 
         static ServiceLoader()
         {
@@ -27,7 +29,7 @@ namespace iStore.Common.ClassLoading
                 var implementation = ClassesLoader.Instance.GetAll()
                     .Where(t => t.GetInterface(interfaceType.Name) != null)
                     .FirstOrDefault();
-                
+
                 if (implementation != null)
                 {
                     var implementationInterface = implementation.GetInterface(interfaceType.Name);
@@ -36,27 +38,46 @@ namespace iStore.Common.ClassLoading
             }
         }
 
-        public T GetService<T>()
+        public T GetService<T>(bool newInstance = false)
         {
             var interfaceType = typeof(T);
             var key = GetKey(interfaceType, interfaceType);
-            lock (ServiceInstances)
+            T instance;
+
+            if (newInstance)
             {
-                if (!ServiceInstances.ContainsKey(key))
-                {
-                    var implementationType = ServicesTypes[key];
-                    var assemblyName = implementationType.Assembly.GetName();
-
-                    var assembly = AssemblyLoader.LoadFromAssemblyName(assemblyName);
-                    var typeString = $"{implementationType.Namespace}.{implementationType.Name}";
-                    var type = assembly.GetType(typeString);
-
-                    T instance = (T)Activator.CreateInstance(type);
-                    ServiceInstances.Add(key, instance);
-                }
-
-                return (T)ServiceInstances[key];
+                instance = GetNewInstance<T>(key);
             }
+            else
+            {
+                lock (ServiceInstances)
+                {
+                    if (!ServiceInstances.ContainsKey(key))
+                    {
+                        instance = GetNewInstance<T>(key);
+                        ServiceInstances.Add(key, instance);
+                    }
+                    else
+                    {
+                        instance = (T)ServiceInstances[key];
+                    }
+                }
+            }
+
+            return instance;
+        }
+
+        private T GetNewInstance<T>(string typeKey)
+        {
+            var implementationType = ServicesTypes[typeKey];
+            var assemblyName = implementationType.Assembly.GetName();
+
+            var assembly = AssemblyLoader.LoadFromAssemblyName(assemblyName);
+            var typeString = $"{implementationType.Namespace}.{implementationType.Name}";
+            var type = assembly.GetType(typeString);
+
+            var instance = (T)Activator.CreateInstance(type);
+            return instance;
         }
 
         private static string GetGenericParametersString(Type type)

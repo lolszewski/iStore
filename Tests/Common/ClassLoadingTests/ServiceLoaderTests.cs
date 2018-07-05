@@ -19,6 +19,22 @@ namespace iStore.Tests.Common.ClassLoadingTests
         }
 
         [TestMethod]
+        public void ShouldLoadNonGenericServiceImplementationSameInstance()
+        {
+            var firstImplementation = ServiceLoader.Instance.GetService<IFakeInterfaceWithStringMethod>();
+            var secondImplementation = ServiceLoader.Instance.GetService<IFakeInterfaceWithStringMethod>();
+            firstImplementation.GetValue().Should().Equals(secondImplementation.GetValue());
+        }
+
+        [TestMethod]
+        public void ShouldLoadNonGenericServiceImplementationNewInstance()
+        {
+            var firstImplementation = ServiceLoader.Instance.GetService<IFakeInterfaceWithStringMethod>(true);
+            var secondImplementation = ServiceLoader.Instance.GetService<IFakeInterfaceWithStringMethod>(true);
+            firstImplementation.GetValue().Should().NotBe(secondImplementation.GetValue());
+        }
+
+        [TestMethod]
         public void ShouldLoadGenericServiceImplementation()
         {
             var fakeGenericInterfaceImplementation = ServiceLoader.Instance.GetService<IFakeGenericInterface<FakeGenericParameter>>();

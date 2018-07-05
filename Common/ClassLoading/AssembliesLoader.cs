@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using iStore.Constants.Namespace.IStoreLibrariesNames;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -6,24 +7,24 @@ namespace iStore.Common.ClassLoading
 {
     public class AssembliesLoader
     {
-        public static AssembliesLoader Instance = new AssembliesLoader();
+        public static readonly AssembliesLoader Instance = new AssembliesLoader();
 
-        private IEnumerable<Assembly> CachedAssemblies;
+        private static IEnumerable<Assembly> CachedAssemblies;
+
+        static AssembliesLoader()
+        {
+            CachedAssemblies = LoadAssemblies();
+        }
 
         public IEnumerable<Assembly> GetAll()
         {
-            if (CachedAssemblies == null)
-            {
-                CachedAssemblies = LoadAssemblies();
-            }
-
             return CachedAssemblies;
         }
 
-        private IEnumerable<Assembly> LoadAssemblies()
+        private static IEnumerable<Assembly> LoadAssemblies()
         {
             var directory = AssemblyDirectoryLoader.Instance.GetAssemblyDirectoryPath();
-            foreach (var file in Directory.GetFiles(directory, "iStore*.dll"))
+            foreach (var file in Directory.GetFiles(directory, iStoreLibrariesDependencyInjectionSearchpattern.Pattern))
             {
                 var assembly = Assembly.LoadFile(file);
                 yield return assembly;

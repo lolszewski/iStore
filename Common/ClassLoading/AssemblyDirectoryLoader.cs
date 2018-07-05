@@ -6,20 +6,20 @@ namespace iStore.Common.ClassLoading
 {
     public class AssemblyDirectoryLoader
     {
-        public static AssemblyDirectoryLoader Instance = new AssemblyDirectoryLoader();
+        public static readonly AssemblyDirectoryLoader Instance = new AssemblyDirectoryLoader();
 
-        private string CachedDirectoryPath;
+        private static string CachedDirectoryPath;
+
+        static AssemblyDirectoryLoader()
+        {
+            var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            var uri = new UriBuilder(codeBase);
+            var path = Uri.UnescapeDataString(uri.Path);
+            CachedDirectoryPath = Path.GetDirectoryName(path);
+        }
 
         public string GetAssemblyDirectoryPath()
         {
-            if (CachedDirectoryPath == null)
-            {
-                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                var uri = new UriBuilder(codeBase);
-                var path = Uri.UnescapeDataString(uri.Path);
-                CachedDirectoryPath = Path.GetDirectoryName(path);
-            }
-
             return CachedDirectoryPath;
         }
     }

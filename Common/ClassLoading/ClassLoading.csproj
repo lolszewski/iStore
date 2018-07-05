@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Constants\Namespace\IStoreLibrariesNames\IStoreLibrariesNames.csproj" />
+  </ItemGroup>
+
 </Project>
