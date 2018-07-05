@@ -1,5 +1,5 @@
-﻿using DataAccessMeta;
-using iStore.Data.Model.DataModelMeta;
+﻿using iStore.Data.DataAccess.DataAccessMeta;
+using iStore.Data.DataModel.DataModelMeta;
 using System;
 
 namespace DataAccessors
@@ -9,8 +9,8 @@ namespace DataAccessors
         public static DataAccessorsFactory Instance = new DataAccessorsFactory();
 
         public DataAccessor<DataType, SelectionType> GetDataAccessor<DataType, SelectionType>()
-            where DataType : DataItem
-            where SelectionType : DataSelection
+            where DataType : IDataItem
+            where SelectionType : IDataSelection
         {
             throw new NotImplementedException();
         }

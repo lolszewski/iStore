@@ -1,10 +1,10 @@
-﻿using iStore.Data.Model.DataModelMeta;
+﻿using iStore.Data.DataModel.DataModelMeta;
 
-namespace DataAccessMeta
+namespace iStore.Data.DataAccess.DataAccessMeta
 {
     public interface DataAccessor<DataType, DataSelectionType> 
-        where DataType: DataItem
-        where DataSelectionType: DataSelection
+        where DataType: IDataItem
+        where DataSelectionType: IDataSelection
     {
         DataType get(DataSelectionType selection);
     }

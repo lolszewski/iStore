@@ -1,8 +1,8 @@
-﻿using iStore.Data.Model.DataModelMeta;
+﻿using iStore.Data.DataModel.DataModelMeta;
 
 namespace iStore.Libraries.Business.Model.BusinessModelMeta
 {
-    public class BusinessObject : DataItem
+    public class BusinessObject : IDataItem
     {
     }
 }

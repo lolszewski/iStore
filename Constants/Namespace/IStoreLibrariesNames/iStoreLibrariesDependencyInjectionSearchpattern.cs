@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace iStore.Constants.Namespace.IStoreLibrariesNames
+﻿namespace iStore.Constants.Namespace.IStoreLibrariesNames
 {
     public class iStoreLibrariesDependencyInjectionSearchpattern
     {

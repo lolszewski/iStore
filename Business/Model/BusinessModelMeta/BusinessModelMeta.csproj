@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Data\Model\DataModelMeta\DataModelMeta.csproj" />
+    <ProjectReference Include="..\..\..\Data\DataModel\DataModelMeta\DataModelMeta.csproj" />
   </ItemGroup>
 
 </Project>

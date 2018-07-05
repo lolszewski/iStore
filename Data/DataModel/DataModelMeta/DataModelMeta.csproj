@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>iStore.Data.DataModel.DataModelMeta</RootNamespace>
+    <AssemblyName>iStore.Data.DataModel.DataModelMeta</AssemblyName>
+  </PropertyGroup>
+
+</Project>
