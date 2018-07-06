@@ -2,13 +2,11 @@
 using iStore.Data.DataModel.DataModelMeta;
 using System;
 
-namespace DataAccessors
+namespace iStore.Data.Access
 {
-    public class DataAccessorsFactory
+    public class DataAccessorsFactory : IDataAccessorsFactory
     {
-        public static DataAccessorsFactory Instance = new DataAccessorsFactory();
-
-        public DataAccessor<DataType, SelectionType> GetDataAccessor<DataType, SelectionType>()
+        public IDataAccessor<DataType, SelectionType> GetDataAccessor<DataType, SelectionType>()
             where DataType : IDataItem
             where SelectionType : IDataSelection
         {

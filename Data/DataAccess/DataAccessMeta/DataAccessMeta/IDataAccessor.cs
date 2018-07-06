@@ -2,7 +2,7 @@
 
 namespace iStore.Data.DataAccess.DataAccessMeta
 {
-    public interface DataAccessor<DataType, DataSelectionType> 
+    public interface IDataAccessor<DataType, DataSelectionType> 
         where DataType: IDataItem
         where DataSelectionType: IDataSelection
     {

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>iStore.Data.Access.DataAccessors</RootNamespace>
-    <AssemblyName>iStore.Data.Access.DataAccessors</AssemblyName>
+    <RootNamespace>iStore.Data.Access</RootNamespace>
+    <AssemblyName>iStore.Data.Access</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

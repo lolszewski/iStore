@@ -2,7 +2,7 @@
 
 namespace iStore.Data.Access.DataSources.MsSql.MsSqlDataSourceMeta
 {
-    public interface IMsSqlDataSources : IDataSource
+    public interface IMsSqlDataSource : IDataSource
     {
         string GetConnectionString();
     }

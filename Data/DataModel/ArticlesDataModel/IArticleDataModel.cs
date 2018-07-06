@@ -2,7 +2,7 @@
 
 namespace iStore.Data.DataModel.ArticlesDataModel
 {
-    public interface ArticleDataItem : IDataItem
+    public interface IArticleDataModel : IDataItem
     {
     }
 }
