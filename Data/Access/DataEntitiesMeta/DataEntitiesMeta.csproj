@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>iStore.Data.Access.DataEntitiesMeta</AssemblyName>
+    <RootNamespace>iStore.Data.Access.DataEntitiesMeta</RootNamespace>
+  </PropertyGroup>
+
+</Project>
