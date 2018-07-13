@@ -47,5 +47,16 @@ namespace iStore.Tests.Common.ClassLoadingTests
             var fakeGenericInterfaceImplementationWithTwoParameters = ServiceLoader.Instance.GetService<IFakeGenericInterfaceWithTwoParameters<FakeGenericParameter, FakeGenericParameter>>();
             fakeGenericInterfaceImplementationWithTwoParameters.Should().NotBeNull("there is an active implementation of desired interface with generic parameter so it should be loaded");
         }
+
+        [TestMethod]
+        public void ShouldLoadServicesImplementationWithNestedInterfaces()
+        {
+            var fakeNestedInterfaceLevel3 = ServiceLoader.Instance.GetService<IFakeNestedInterfaceLevel3>();
+            fakeNestedInterfaceLevel3.Should().NotBeNull("there is an active implementation of desired interface with generic parameter so it should be loaded");
+            var fakeNestedInterfaceLevel1 = ServiceLoader.Instance.GetService<IFakeNestedInterfaceLevel1>();
+            fakeNestedInterfaceLevel1.Should().NotBeNull("there is an active implementation of desired interface with generic parameter so it should be loaded");
+            var fakeNestedInterfaceLevel2 = ServiceLoader.Instance.GetService<IFakeNestedInterfaceLevel2>();
+            fakeNestedInterfaceLevel2.Should().NotBeNull("there is an active implementation of desired interface with generic parameter so it should be loaded");
+        }
     }
 }

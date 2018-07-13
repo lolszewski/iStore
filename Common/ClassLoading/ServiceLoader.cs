@@ -12,9 +12,9 @@ namespace iStore.Common.ClassLoading
 
         private readonly AssemblyLoader AssemblyLoader = new AssemblyLoader(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase));
 
-        private static readonly Dictionary<string, Type> ServicesTypes;
+        private static readonly IDictionary<string, Type> ServicesTypes;
 
-        private static readonly Dictionary<string, object> ServiceInstances;
+        private static readonly IDictionary<string, object> ServiceInstances;
 
         private ServiceLoader() { }
 
@@ -87,14 +87,6 @@ namespace iStore.Common.ClassLoading
         private static string GetKey(Type firstPartKeyType, Type genericParametersTypeKey)
         {
             return $"{firstPartKeyType.Namespace}.{firstPartKeyType.Name}.{GetGenericParametersString(genericParametersTypeKey)}";
-        }
-
-        class ServiceProvider : IServiceProvider
-        {
-            public object GetService(Type serviceType)
-            {
-                throw new NotImplementedException();
-            }
         }
     }
 }
