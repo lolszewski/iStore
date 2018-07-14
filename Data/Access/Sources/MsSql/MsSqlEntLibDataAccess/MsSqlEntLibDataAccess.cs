@@ -1,33 +1,34 @@
 ﻿using iStore.Data.Access.DataEntitiesMeta;
 using iStore.Data.Access.Sources.MsSql.MsSqlDataAccessMeta;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace iStore.Data.Access.Sources.MsSql.MsSqlEntLibDataAccess
 {
     public class MsSqlEntLibDataAccess<EntityType> : IMsSqlDataAccess<EntityType>
         where EntityType : IDataEntity
     {
-        public string Create(EntityType entity)
+        public async Task<string> Create(EntityType entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Delete(object[] query)
+        public async Task Delete(object[] query)
         {
             throw new System.NotImplementedException();
         }
 
-        public EntityType Read(string identifier)
+        public async Task<EntityType> Read(string identifier)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<EntityType> ReadMany(object[] query)
+        public async Task<IEnumerable<EntityType>> ReadMany(object[] query)
         {
             throw new System.NotImplementedException();
         }
 
-        public EntityType Update(EntityType entity)
+        public async Task<EntityType> Update(EntityType entity)
         {
             throw new System.NotImplementedException();
         }
