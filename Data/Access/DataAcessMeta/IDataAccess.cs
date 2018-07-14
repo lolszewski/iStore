@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace iStore.Data.Access.DataAcessMeta
 {
@@ -10,14 +11,14 @@ namespace iStore.Data.Access.DataAcessMeta
             EntityRemoveDataSelectionType
         >
     {
-        EntityIdentifierType Create(EntityType entity);
+        Task<EntityIdentifierType> Create(EntityType entity);
 
-        EntityType Read(EntityIdentifierType identifier);
+        Task<EntityType> Read(EntityIdentifierType identifier);
 
-        IEnumerable<EntityType> ReadMany(EntityReadManyDataSelectionType query);
+        Task<IEnumerable<EntityType>> ReadMany(EntityReadManyDataSelectionType query);
 
-        EntityType Update(EntityType entity);
+        Task<EntityType> Update(EntityType entity);
 
-        void Delete(EntityRemoveDataSelectionType query);
+        Task Delete(EntityRemoveDataSelectionType query);
     }
 }

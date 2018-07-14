@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace iStore.Data.Access.DataEntitiesMeta
 {
     public interface IDataEntity
     {
-        IDictionary<string, object> GetConfiguration();
+        Task<IDictionary<string, object>> GetConfiguration();
     }
 }
