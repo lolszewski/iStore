@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>iStore.Data.Access.DataAccessCommon</AssemblyName>
-    <RootNamespace>iStore.Data.Access.DataAccessCommon</RootNamespace>
+    <AssemblyName>iStore.Data.Access.DataEntitiesCommonMeta</AssemblyName>
+    <RootNamespace>iStore.Data.Access.DataEntitiesCommonMeta</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

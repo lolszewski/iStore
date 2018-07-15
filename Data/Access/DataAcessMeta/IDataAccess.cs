@@ -1,24 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace iStore.Data.Access.DataAcessMeta
+namespace iStore.Data.Access.DataAccessMeta
 {
     public interface IDataAccess
-        <
-            EntityType,
-            EntityIdentifierType,
-            EntityReadManyDataSelectionType, 
-            EntityRemoveDataSelectionType
-        >
     {
-        Task<EntityIdentifierType> Create(EntityType entity);
+        Task<IDataIdentifier> Create(IDataItem entity);
 
-        Task<EntityType> Read(EntityIdentifierType identifier);
+        Task<IDataItem> Read(IDataIdentifier identifier);
 
-        Task<IEnumerable<EntityType>> ReadMany(EntityReadManyDataSelectionType query);
+        Task<IEnumerable<IDataItem>> ReadMany(IDataSelection query);
 
-        Task<EntityType> Update(EntityType entity);
+        Task<IDataItem> Update(IDataItem entity);
 
-        Task Delete(EntityRemoveDataSelectionType query);
+        Task Delete(IDataSelection query);
     }
 }

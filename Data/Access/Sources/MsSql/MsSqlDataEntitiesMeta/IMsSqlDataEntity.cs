@@ -1,8 +1,8 @@
-﻿using iStore.Data.Access.DataEntitiesMeta;
+﻿using iStore.Data.Access.DataAccessMeta;
 
 namespace iStore.Data.Access.Sources.MsSql.MsSqlDataEntitiesMeta
 {
-    public interface IMsSqlDataEntity : IDataEntity
+    public interface IMsSqlDataEntity : IDataItem
     {
     }
 }

@@ -1,10 +1,8 @@
-﻿using iStore.Data.Access.DataAccessCommon;
-using iStore.Data.Access.DataEntitiesMeta;
+﻿using iStore.Data.Access.DataAcessMeta;
 
 namespace iStore.Data.Access.Sources.MsSql.MsSqlDataAccessMeta
 {
-    public interface IMsSqlDataAccess<EntityType> : IDefaultDataAccess<EntityType>
-        where EntityType : IDataEntity
+    public interface IMsSqlDataAccess : IDefaultDataAccess
     {
     }
 }
