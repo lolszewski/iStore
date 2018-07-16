@@ -1,10 +1,12 @@
-﻿using iStore.Data.Access.DataAccessMeta;
+﻿using iStore.Common.ClassLoading;
+using iStore.Data.Access.DataAccessMeta;
+using iStore.Data.Access.DataIdentifiersMeta;
 
 namespace iStore.Model.ArticleModel
 {
     public class Article : IDataItem
     {
-        public int Id { get; set; } = -1;
+        public IIntValueDataIdentifier Id { get; set; } = ServiceLoader.Instance.GetService<IIntValueDataIdentifier>();
 
         public string Name { get; set; } = string.Empty;
 

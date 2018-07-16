@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>iStore.Tests.Model.FakeModel</AssemblyName>
+    <RootNamespace>iStore.Tests.Model.FakeModel</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Data\Access\DataAcessMeta\DataAcessMeta.csproj" />
+  </ItemGroup>
+
+</Project>

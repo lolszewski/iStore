@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\ClassLoading\ClassLoading.csproj" />
     <ProjectReference Include="..\..\Data\Access\DataAcessMeta\DataAcessMeta.csproj" />
+    <ProjectReference Include="..\..\Data\Access\DataIdentifiersMeta\DataIdentifiersMeta.csproj" />
   </ItemGroup>
 
 </Project>
