@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -12,16 +12,16 @@ namespace iStore.Common.ClassLoading
 
         private readonly AssemblyLoader AssemblyLoader = new AssemblyLoader(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase));
 
-        private static readonly IDictionary<string, Type> ServicesTypes;
+        private static readonly ConcurrentDictionary<string, Type> ServicesTypes;
 
-        private static readonly IDictionary<string, object> ServiceInstances;
+        private static readonly ConcurrentDictionary<string, object> ServiceInstances;
 
         private ServiceLoader() { }
 
         static ServiceLoader()
         {
-            ServicesTypes = new Dictionary<string, Type>();
-            ServiceInstances = new Dictionary<string, object>();
+            ServicesTypes = new ConcurrentDictionary<string, Type>();
+            ServiceInstances = new ConcurrentDictionary<string, object>();
 
             foreach (var interfaceType in InterfacesLoader.Instance.GetAll())
             {
@@ -32,7 +32,7 @@ namespace iStore.Common.ClassLoading
                 if (implementation != null)
                 {
                     var implementationInterface = implementation.GetInterface(interfaceType.Name);
-                    ServicesTypes.Add(GetKey(interfaceType, implementationInterface), implementation);
+                    ServicesTypes.TryAdd(GetKey(interfaceType, implementationInterface), implementation);
                 }
             }
         }
@@ -49,17 +49,14 @@ namespace iStore.Common.ClassLoading
             }
             else
             {
-                lock (ServiceInstances)
+                if (!ServiceInstances.ContainsKey(key))
                 {
-                    if (!ServiceInstances.ContainsKey(key))
-                    {
-                        instance = GetNewInstance<T>(key);
-                        ServiceInstances.Add(key, instance);
-                    }
-                    else
-                    {
-                        instance = (T)ServiceInstances[key];
-                    }
+                    instance = GetNewInstance<T>(key);
+                    ServiceInstances.TryAdd(key, instance);
+                }
+                else
+                {
+                    instance = (T)ServiceInstances[key];
                 }
             }
 
