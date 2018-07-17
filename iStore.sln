@@ -25,8 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rest", "Rest", "{6B787092-2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iStoreRestApi", "Applications\Rest\iStoreRestApi\iStoreRestApi.csproj", "{81D7F443-2AF3-4CDF-9DEF-F97196EA0E9D}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8984EFB0-C609-4273-B35F-1F765C8237AD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Constants", "Constants", "{EEAE98BA-AAAB-46BC-94BE-42722A362264}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{A7F7D91D-3F56-4BBB-A8F3-D901B72751F7}"

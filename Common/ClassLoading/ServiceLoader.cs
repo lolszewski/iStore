@@ -41,7 +41,7 @@ namespace iStore.Common.ClassLoading
         {
             var interfaceType = typeof(T);
             var key = GetKey(interfaceType, interfaceType);
-            T instance;
+            object instance;
 
             if (newInstance)
             {
@@ -49,18 +49,14 @@ namespace iStore.Common.ClassLoading
             }
             else
             {
-                if (!ServiceInstances.ContainsKey(key))
+                if (!ServiceInstances.TryGetValue(key, out instance))
                 {
                     instance = GetNewInstance<T>(key);
                     ServiceInstances.TryAdd(key, instance);
                 }
-                else
-                {
-                    instance = (T)ServiceInstances[key];
-                }
             }
 
-            return instance;
+            return (T)instance;
         }
 
         private T GetNewInstance<T>(string typeKey)

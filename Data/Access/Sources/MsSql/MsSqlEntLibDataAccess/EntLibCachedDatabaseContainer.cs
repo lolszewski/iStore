@@ -8,9 +8,9 @@ namespace iStore.Data.Access.Sources.MsSql.MsSqlEntLibDataAccess
         public static readonly EntLibCachedDatabaseContainer Instance;
         
         private ConcurrentDictionary<string, Database> Databases;
-
+        
         private EntLibCachedDatabaseContainer() { }
-
+        
         static EntLibCachedDatabaseContainer()
         {
             Instance = new EntLibCachedDatabaseContainer();
@@ -24,6 +24,8 @@ namespace iStore.Data.Access.Sources.MsSql.MsSqlEntLibDataAccess
                 var createdDatabase = EntLibDatabaseBuilder.Instance.Build(connectionString);
                 Databases.TryAdd(connectionString, createdDatabase);
             }
+
+            new object();
 
             Databases.TryGetValue(connectionString, out var database);
 
