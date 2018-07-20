@@ -1,4 +1,5 @@
 ﻿using DataEntitiesCommonMeta;
+using iStore.Core.Meta;
 using iStore.Data.Access.DataAccessMeta;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace iStore.Data.Access.DataEntitiesCommon
             DataIdentifierType,
             DataGetManyelectionType,
             DataDeleteSelectionType
-        >
+        > : IService
         where DataItemType : IDataItem
         where DataIdentifierType : IDataIdentifier
         where DataGetManyelectionType : IDataSelection

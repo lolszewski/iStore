@@ -6,4 +6,8 @@
     <RootNamespace>iStore.Data.Access.DataAcessMeta</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\CoreMeta.csproj" />
+  </ItemGroup>
+
 </Project>

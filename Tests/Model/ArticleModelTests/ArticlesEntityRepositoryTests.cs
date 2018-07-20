@@ -11,8 +11,8 @@ namespace iStore.Tests.Model.ArticleModelTests
         [TestMethod]
         public void TestRepositoryLoading()
         {
-            var service = ServiceLoader.Instance.GetService<IDataEntitiesRepository>();
-            service.Configure<Article>(null);
+            //var service = ServiceLoader.Instance.GetService<IDataEntitiesRepository>();
+            //service.Configure<Article>(null);
         }
     }
 }

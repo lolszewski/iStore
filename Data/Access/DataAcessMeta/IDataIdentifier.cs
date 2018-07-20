@@ -1,6 +1,8 @@
-﻿namespace iStore.Data.Access.DataAccessMeta
+﻿using iStore.Core.Meta;
+
+namespace iStore.Data.Access.DataAccessMeta
 {
-    public interface IDataIdentifier
+    public interface IDataIdentifier : IService
     {
     }
 }

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using iStore.Core.Meta;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace iStore.Data.Access.DataAccessMeta
 {
-    public interface IDataAccess
+    public interface IDataAccess : IService
     {
         Task<IDataIdentifier> Create(IDataItem entity);
 

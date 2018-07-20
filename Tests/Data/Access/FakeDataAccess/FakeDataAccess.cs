@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using iStore.Common.ClassLoading;
+using iStore.Common.ClassLoading.Extensions;
 using iStore.Data.Access.DataAccessMeta;
 using iStore.Data.Access.DataIdentifiersMeta;
 
@@ -10,7 +10,7 @@ namespace FakeDataAccess
     {
         public Task<IDataIdentifier> Create(IDataItem entity)
         {
-            return Task.FromResult<IDataIdentifier>((ServiceLoader.Instance.GetService<ISingleValueDataIdentifier<int>>().WithValue(123)));
+            return Task.FromResult<IDataIdentifier>(this.NewService<ISingleValueDataIdentifier<int>>().WithValue(123));
         }
 
         public Task Delete(IDataSelection query)
