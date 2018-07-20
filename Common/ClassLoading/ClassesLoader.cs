@@ -1,15 +1,15 @@
 ﻿
+using iStore.Core.CoreCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace iStore.Common.ClassLoading
 {
-    public class ClassesLoader
+    public class ClassesLoader : StaticInstance<ClassesLoader>
     {
-        public static readonly ClassesLoader Instance = new ClassesLoader();
-
         private static IEnumerable<Type> CachedClasses;
+
         static ClassesLoader()
         {
             CachedClasses = AssembliesLoader.Instance.GetAll()

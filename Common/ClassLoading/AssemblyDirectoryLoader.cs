@@ -1,13 +1,12 @@
-﻿using System;
+﻿using iStore.Core.CoreCommon;
+using System;
 using System.IO;
 using System.Reflection;
 
 namespace iStore.Common.ClassLoading
 {
-    public class AssemblyDirectoryLoader
+    public class AssemblyDirectoryLoader : StaticInstance<AssemblyDirectoryLoader>
     {
-        public static readonly AssemblyDirectoryLoader Instance = new AssemblyDirectoryLoader();
-
         private static string CachedDirectoryPath;
 
         static AssemblyDirectoryLoader()

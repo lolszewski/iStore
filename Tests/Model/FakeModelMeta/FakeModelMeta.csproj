@@ -2,13 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>iStore.Tests.Model.FakeModel</AssemblyName>
-    <RootNamespace>iStore.Tests.Model.FakeModel</RootNamespace>
+    <AssemblyName>iStore.Tests.Model.FakeModelMeta</AssemblyName>
+    <RootNamespace>iStore.Tests.Model.FakeModelMeta</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Data\Access\DataAcessMeta\DataAcessMeta.csproj" />
-    <ProjectReference Include="..\FakeModelMeta\FakeModelMeta.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,7 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Constants\Namespace\IStoreLibrariesNames\IStoreLibrariesNames.csproj" />
-    <ProjectReference Include="..\..\Core\CoreMeta.csproj" />
+    <ProjectReference Include="..\..\Core\CoreCommon\CoreCommon.csproj" />
+    <ProjectReference Include="..\..\Core\CoreMeta\CoreMeta.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,14 +1,13 @@
 ﻿using iStore.Constants.Namespace.IStoreLibrariesNames;
+using iStore.Core.CoreCommon;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
 namespace iStore.Common.ClassLoading
 {
-    public class AssembliesLoader
+    public class AssembliesLoader : StaticInstance<AssembliesLoader>
     {
-        public static readonly AssembliesLoader Instance = new AssembliesLoader();
-
         private static IEnumerable<Assembly> CachedAssemblies;
 
         static AssembliesLoader()

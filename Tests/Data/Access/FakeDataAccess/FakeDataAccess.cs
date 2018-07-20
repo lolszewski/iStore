@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using iStore.Common.ClassLoading.Extensions;
 using iStore.Data.Access.DataAccessMeta;
 using iStore.Data.Access.DataIdentifiersMeta;
+using iStore.Tests.Model.FakeModelMeta;
 
 namespace FakeDataAccess
 {
@@ -13,14 +14,14 @@ namespace FakeDataAccess
             return Task.FromResult<IDataIdentifier>(this.NewService<ISingleValueDataIdentifier<int>>().WithValue(123));
         }
 
-        public Task Delete(IDataSelection query)
+        public async Task Delete(IDataSelection query)
         {
-            throw new System.NotImplementedException();
+            await Task.Delay(10);
         }
 
-        public Task<IDataItem> Read(IDataIdentifier identifier)
+        public async Task<IDataItem> Read(IDataIdentifier identifier)
         {
-            throw new System.NotImplementedException();
+            return await Task.FromResult(this.NewService<IFakeModel>());
         }
 
         public Task<IEnumerable<IDataItem>> ReadMany(IDataSelection query)

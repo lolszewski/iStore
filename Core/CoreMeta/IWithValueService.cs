@@ -4,4 +4,9 @@
     {
         TReturningType WithValue(TValueType value);
     }
+
+    public interface IWithValueService<TValueType> : IService
+    {
+        void WithValue(TValueType value);
+    }
 }

@@ -14,6 +14,11 @@ namespace iStore.Common.ClassLoading.Extensions
             return ServiceLoader.Instance.GetService<T>(true);
         }
 
+        public static T NewServices<T>(this IService service, int count)
+        {
+            return ServiceLoader.Instance.GetService<T>(true);
+        }
+
         /// <summary>
         /// Returns cached instance of implementation of given interface type - should be stateless because of multi threading problems.
         /// </summary>

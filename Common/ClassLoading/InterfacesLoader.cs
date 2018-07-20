@@ -1,13 +1,12 @@
-﻿using System;
+﻿using iStore.Core.CoreCommon;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace iStore.Common.ClassLoading
 {
-    public class InterfacesLoader
+    public class InterfacesLoader : StaticInstance<InterfacesLoader>
     {
-        public static readonly InterfacesLoader Instance = new InterfacesLoader();
-
         private static IEnumerable<Type> CachedInterfaces;
 
         static InterfacesLoader()

@@ -1,19 +1,15 @@
-﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+﻿using iStore.Core.CoreCommon;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Collections.Concurrent;
 
 namespace iStore.Data.Access.Sources.MsSql.MsSqlEntLibDataAccess
 {
-    public class EntLibCachedDatabaseContainer
+    public class EntLibCachedDatabaseContainer : StaticInstance<EntLibCachedDatabaseContainer>
     {
-        public static readonly EntLibCachedDatabaseContainer Instance;
-        
         private ConcurrentDictionary<string, Database> Databases;
-        
-        private EntLibCachedDatabaseContainer() { }
-        
+                
         static EntLibCachedDatabaseContainer()
         {
-            Instance = new EntLibCachedDatabaseContainer();
             Instance.Databases = new ConcurrentDictionary<string, Database>();
         }
 

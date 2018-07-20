@@ -1,22 +1,22 @@
-﻿using System;
+﻿using iStore.Core.CoreCommon;
+using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
 namespace iStore.Common.ClassLoading
 {
-    public class ServiceLoader
+    public class ServiceLoader : StaticInstance<ServiceLoader>
     {
-        public static readonly ServiceLoader Instance = new ServiceLoader();
-
         private readonly AssemblyLoader AssemblyLoader = new AssemblyLoader(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase));
 
         private static readonly ConcurrentDictionary<string, Type> ServicesTypes;
 
         private static readonly ConcurrentDictionary<string, object> ServiceInstances;
 
-        private ServiceLoader() { }
+        public ServiceLoader() { }
 
         static ServiceLoader()
         {
@@ -59,7 +59,31 @@ namespace iStore.Common.ClassLoading
             return (T)instance;
         }
 
+        public IEnumerable<T> GetServices<T>(int count)
+        {
+            var interfaceType = typeof(T);
+            var key = GetKey(interfaceType, interfaceType);
+
+            return GetNewInstances<T>(key, count);
+        }
+
         private T GetNewInstance<T>(string typeKey)
+        {
+            var type = GetTypeForInstanceCreation(typeKey);
+            var instance = (T)Activator.CreateInstance(type);
+            return instance;
+        }
+
+        private IEnumerable<T> GetNewInstances<T>(string typeKey, int count)
+        {
+            var type = GetTypeForInstanceCreation(typeKey);
+            for (int i = 0; i < count; i++)
+            {
+                yield return (T)Activator.CreateInstance(type);
+            }
+        }
+
+        private Type GetTypeForInstanceCreation(string typeKey)
         {
             var implementationType = ServicesTypes[typeKey];
             var assemblyName = implementationType.Assembly.GetName();
@@ -68,8 +92,7 @@ namespace iStore.Common.ClassLoading
             var typeString = $"{implementationType.Namespace}.{implementationType.Name}";
             var type = assembly.GetType(typeString);
 
-            var instance = (T)Activator.CreateInstance(type);
-            return instance;
+            return type;
         }
 
         private static string GetGenericParametersString(Type type)

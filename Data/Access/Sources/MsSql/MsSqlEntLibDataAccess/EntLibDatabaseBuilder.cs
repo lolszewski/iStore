@@ -1,20 +1,12 @@
-﻿using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+﻿using iStore.Core.CoreCommon;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Configuration;
 
 namespace iStore.Data.Access.Sources.MsSql.MsSqlEntLibDataAccess
 {
-    public class EntLibDatabaseBuilder
+    public class EntLibDatabaseBuilder : StaticInstance<EntLibDatabaseBuilder>
     {
-        public static readonly EntLibDatabaseBuilder Instance;
-
-        private EntLibDatabaseBuilder() { }
-
-        static EntLibDatabaseBuilder()
-        {
-            Instance = new EntLibDatabaseBuilder();
-        }
-
         public Database Build(string connectionString)
         {
             var connectionStringsSection = new ConnectionStringsSection();
