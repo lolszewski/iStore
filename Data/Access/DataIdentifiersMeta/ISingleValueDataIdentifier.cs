@@ -7,5 +7,7 @@ namespace iStore.Data.Access.DataIdentifiersMeta
         void SetId(T id);
 
         T GetId();
+
+        ISingleValueDataIdentifier<T> WithValue(T id);
     }
 }

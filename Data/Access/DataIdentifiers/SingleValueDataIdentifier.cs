@@ -9,5 +9,11 @@ namespace iStore.Data.Access.DataIdentifiers
         public T GetId() => Id;
 
         public void SetId(T id) => Id = id;
+
+        public ISingleValueDataIdentifier<T> WithValue(T id)
+        {
+            SetId(id);
+            return this;
+        }
     }
 }

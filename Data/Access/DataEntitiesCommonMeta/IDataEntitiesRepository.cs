@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 namespace iStore.Data.Access.DataEntitiesCommon
 {
     public interface IDataEntitiesRepository
+        <
+            DataItemType,
+            DataIdentifierType,
+            DataGetManyelectionType,
+            DataDeleteSelectionType
+        >
+        where DataItemType : IDataItem
+        where DataIdentifierType : IDataIdentifier
+        where DataGetManyelectionType : IDataSelection
+        where DataDeleteSelectionType : IDataSelection
     {
-        Task<IDataIdentifier> Create(IDataItem entity);
+        Task<DataIdentifierType> Create(DataItemType entity);
 
-        Task<IDataItem> Read<T>(IDataIdentifier identifier);
+        Task<DataItemType> Read<T>(DataIdentifierType identifier);
 
-        Task<IEnumerable<IDataItem>> ReadMany<T>(IDataSelection query);
+        Task<IEnumerable<DataItemType>> ReadMany<T>(DataGetManyelectionType query);
 
-        Task<IDataItem> Update(IDataItem entity);
+        Task<DataItemType> Update(DataItemType entity);
 
-        Task Delete<T>(IDataSelection query);
+        Task Delete<T>(DataDeleteSelectionType query);
 
         void Configure<T>(IDataEntityConfigurationItem configuration) where T : IDataItem;
     }
