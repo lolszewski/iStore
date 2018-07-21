@@ -13,6 +13,13 @@ namespace iStore.Common.ClassLoading.ServiceLoading
             return instance;
         }
 
+        public T GetNewInstanceWithValues<T>(string typeKey, params object[] values)
+        {
+            var type = ServiceInstanceTypeProvider.Instance.GetTypeForInstanceCreation(typeKey);
+            var instance = (T)Activator.CreateInstance(type, values);
+            return instance;
+        }
+
         public IEnumerable<T> GetNewInstances<T>(string typeKey, int count)
         {
             var type = ServiceInstanceTypeProvider.Instance.GetTypeForInstanceCreation(typeKey);

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using iStore.Tests.Model.FakeModelMeta;
 
-namespace iStore.Tests.Model.FakeModel
+namespace iStore.Tests.Common.ClassLoadingTests.FakeObjects
 {
     public class FakeModel : IFakeModel
     {

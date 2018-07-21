@@ -1,7 +1,7 @@
 ﻿using iStore.Data.Access.DataAccessMeta;
 using System.Collections.Generic;
 
-namespace iStore.Tests.Model.FakeModelMeta
+namespace iStore.Tests.Common.ClassLoadingTests.FakeObjects
 {
     public interface IFakeModel : IDataItem
     {

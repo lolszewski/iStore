@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\ClassLoading\ClassLoading.csproj" />
+    <ProjectReference Include="..\..\..\Data\Access\DataAcessMeta\DataAcessMeta.csproj" />
   </ItemGroup>
 
 </Project>

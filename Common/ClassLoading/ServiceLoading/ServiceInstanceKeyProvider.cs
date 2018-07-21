@@ -15,5 +15,11 @@ namespace iStore.Common.ClassLoading.ServiceLoading
         {
             return $"{firstPartKeyType.Namespace}.{firstPartKeyType.Name}.{GetGenericParametersString(genericParametersTypeKey)}";
         }
+
+        internal string GetKey<T>()
+        {
+            var interfaceType = typeof(T);
+            return GetKey(interfaceType, interfaceType);
+        }
     }
 }

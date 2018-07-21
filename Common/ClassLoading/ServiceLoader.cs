@@ -8,8 +8,7 @@ namespace iStore.Common.ClassLoading
     {
         public T GetService<T>(bool newInstance = false)
         {
-            var interfaceType = typeof(T);
-            var key = ServiceInstanceKeyProvider.Instance.GetKey(interfaceType, interfaceType);
+            var key = ServiceInstanceKeyProvider.Instance.GetKey<T>();
             object instance;
 
             if (newInstance)
@@ -30,10 +29,16 @@ namespace iStore.Common.ClassLoading
 
         public IEnumerable<T> GetServices<T>(int count)
         {
-            var interfaceType = typeof(T);
-            var key = ServiceInstanceKeyProvider.Instance.GetKey(interfaceType, interfaceType);
+            var key = ServiceInstanceKeyProvider.Instance.GetKey<T>();
 
             return ServiceInstanceProvider.Instance.GetNewInstances<T>(key, count);
+        }
+
+        public T GetServiceWithValues<T>(params object[] values)
+        {
+            var key = ServiceInstanceKeyProvider.Instance.GetKey<T>();
+
+            return ServiceInstanceProvider.Instance.GetNewInstanceWithValues<T>(key, values);
         }
     }
 }

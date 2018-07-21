@@ -3,6 +3,7 @@ using iStore.Common.ClassLoading;
 using iStore.Tests.Common.ClassLoadingTests.FakeInterfaces;
 using iStore.Tests.Common.ClassLoadingTests.FakeObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace iStore.Tests.Common.ClassLoadingTests
 {
@@ -57,6 +58,15 @@ namespace iStore.Tests.Common.ClassLoadingTests
             fakeNestedInterfaceLevel1.Should().NotBeNull("there is an active implementation of desired interface with generic parameter so it should be loaded");
             var fakeNestedInterfaceLevel2 = ServiceLoader.Instance.GetService<IFakeNestedInterfaceLevel2>();
             fakeNestedInterfaceLevel2.Should().NotBeNull("there is an active implementation of desired interface with generic parameter so it should be loaded");
+        }
+
+        [TestMethod]
+        public void ShouldLoadServicesImplementationWithValues()
+        {
+            var fakeNestedInterfaceLevel3 = ServiceLoader.Instance.GetServiceWithValues<IFakeModel>(123, "value", new List<string>() { "value1", "value2" });
+            fakeNestedInterfaceLevel3.IntField.Should().NotBe(default(int));
+            fakeNestedInterfaceLevel3.StringField.Should().NotBe(default(string));
+            fakeNestedInterfaceLevel3.StringsList.Should().HaveCountGreaterThan(default(int));
         }
     }
 }
