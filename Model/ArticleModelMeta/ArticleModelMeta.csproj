@@ -2,15 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>iStore.Model.ArticleModel</AssemblyName>
-    <RootNamespace>iStore.Model.ArticleModel</RootNamespace>
+    <AssemblyName>iStore.Model.ArticleModelMeta</AssemblyName>
+    <RootNamespace>iStore.Model.ArticleModelMeta</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\ClassLoading\ClassLoading.csproj" />
     <ProjectReference Include="..\..\Data\Access\DataAcessMeta\DataAcessMeta.csproj" />
     <ProjectReference Include="..\..\Data\Access\DataIdentifiersMeta\DataIdentifiersMeta.csproj" />
-    <ProjectReference Include="..\ArticleModelMeta\ArticleModelMeta.csproj" />
   </ItemGroup>
 
 </Project>
