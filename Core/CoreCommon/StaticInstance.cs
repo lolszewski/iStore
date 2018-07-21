@@ -2,6 +2,11 @@
 {
     public class StaticInstance<T> where T : new()
     {
-        public static readonly T Instance = new T();
+        public static readonly T Instance;
+
+        static StaticInstance()
+        {
+            Instance = new T();
+        }
     }
 }

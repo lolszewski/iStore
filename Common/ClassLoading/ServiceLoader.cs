@@ -1,14 +1,11 @@
 ﻿using iStore.Common.ClassLoading.ServiceLoading;
 using iStore.Core.CoreCommon;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 
 namespace iStore.Common.ClassLoading
 {
     public class ServiceLoader : StaticInstance<ServiceLoader>
-    {        
+    {
         public T GetService<T>(bool newInstance = false)
         {
             var interfaceType = typeof(T);

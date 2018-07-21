@@ -11,7 +11,12 @@ namespace iStore.Common.ClassLoading.ServiceLoading
 
         public readonly ConcurrentDictionary<string, object> ServiceInstances = new ConcurrentDictionary<string, object>();
 
-        static ServicesTypesContainer()
+        public ServicesTypesContainer()
+        {
+            Initialize();
+        }
+
+        public void Initialize()
         {
             foreach (var interfaceType in InterfacesLoader.Instance.GetAll())
             {
@@ -22,7 +27,7 @@ namespace iStore.Common.ClassLoading.ServiceLoading
                 if (implementation != null)
                 {
                     var implementationInterface = implementation.GetInterface(interfaceType.Name);
-                    Instance.ServicesTypes.TryAdd(ServiceInstanceKeyProvider.Instance.GetKey(interfaceType, implementationInterface), implementation);
+                    ServicesTypes.TryAdd(ServiceInstanceKeyProvider.Instance.GetKey(interfaceType, implementationInterface), implementation);
                 }
             }
         }

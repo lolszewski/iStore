@@ -1,5 +1,4 @@
-﻿
-using iStore.Core.CoreCommon;
+﻿using iStore.Core.CoreCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
