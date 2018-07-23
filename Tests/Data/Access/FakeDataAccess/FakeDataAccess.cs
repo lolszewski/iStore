@@ -5,9 +5,9 @@ using iStore.Data.Access.DataAccessMeta;
 using iStore.Data.Access.DataIdentifiersMeta;
 using iStore.Tests.Model.FakeModelMeta;
 
-namespace FakeDataAccess
+namespace iStore.Tests.Data.Access.FakeDataAccess
 {
-    public class FakeDataAccess : IDataAccess
+    public class FakeDataAccess : IFakeDataAccess
     {
         public Task<IDataIdentifier> Create(IDataItem entity)
         {

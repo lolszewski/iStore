@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\ClassLoading\ClassLoading.csproj" />
     <ProjectReference Include="..\..\..\Data\Access\DataAcessMeta\DataAcessMeta.csproj" />
+    <ProjectReference Include="..\..\Model\FakeModelMeta\FakeModelMeta.csproj" />
   </ItemGroup>
 
 </Project>

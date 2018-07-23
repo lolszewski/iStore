@@ -2,6 +2,7 @@
 using iStore.Common.ClassLoading;
 using iStore.Tests.Common.ClassLoadingTests.FakeInterfaces;
 using iStore.Tests.Common.ClassLoadingTests.FakeObjects;
+using iStore.Tests.Model.FakeModelMeta;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
