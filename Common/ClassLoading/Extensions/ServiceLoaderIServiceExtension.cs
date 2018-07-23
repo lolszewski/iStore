@@ -1,4 +1,5 @@
 ﻿using iStore.Core.Meta;
+using System.Collections.Generic;
 
 namespace iStore.Common.ClassLoading.Extensions
 {
@@ -14,9 +15,9 @@ namespace iStore.Common.ClassLoading.Extensions
             return ServiceLoader.Instance.GetService<T>(true);
         }
 
-        public static T NewServices<T>(this IService service, int count)
+        public static IEnumerable<T> NewServices<T>(this IService service, int count)
         {
-            return ServiceLoader.Instance.GetService<T>(true);
+            return ServiceLoader.Instance.GetServices<T>(count);
         }
 
         /// <summary>

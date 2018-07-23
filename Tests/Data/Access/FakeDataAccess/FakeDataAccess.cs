@@ -24,14 +24,14 @@ namespace FakeDataAccess
             return await Task.FromResult(this.NewService<IFakeModel>());
         }
 
-        public Task<IEnumerable<IDataItem>> ReadMany(IDataSelection query)
+        public async Task<IEnumerable<IDataItem>> ReadMany(IDataSelection query)
         {
-            throw new System.NotImplementedException();
+            return await Task.FromResult(this.NewServices<IFakeModel>(10));
         }
 
-        public Task<IDataItem> Update(IDataItem entity)
+        public async Task<IDataItem> Update(IDataItem entity)
         {
-            throw new System.NotImplementedException();
+            return await Task.FromResult(this.NewService<IFakeModel>());
         }
     }
 }
