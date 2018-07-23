@@ -11,6 +11,7 @@
     <ProjectReference Include="..\..\..\..\Data\Access\DataAcessMeta\DataAcessMeta.csproj" />
     <ProjectReference Include="..\..\..\..\Data\Access\DataIdentifiersMeta\DataIdentifiersMeta.csproj" />
     <ProjectReference Include="..\..\..\Model\FakeModelMeta\FakeModelMeta.csproj" />
+    <ProjectReference Include="..\FakeDataAccessMeta\FakeDataAccessMeta.csproj" />
   </ItemGroup>
 
 </Project>

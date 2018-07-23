@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using iStore.Common.ClassLoading.Extensions;
 using iStore.Data.Access.DataAccessMeta;
 using iStore.Data.Access.DataIdentifiersMeta;
+using iStore.Tests.Data.Access.FakeDataAccessMeta;
 using iStore.Tests.Model.FakeModelMeta;
 
 namespace iStore.Tests.Data.Access.FakeDataAccess
