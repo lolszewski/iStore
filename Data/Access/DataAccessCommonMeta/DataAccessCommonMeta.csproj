@@ -2,12 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>iStore.Data.Access.DataAccessCommon</AssemblyName>
-    <RootNamespace>iStore.Data.Access.DataAccessCommon</RootNamespace>
+    <AssemblyName>iStore.Data.Access.DataAccessCommonMeta</AssemblyName>
+    <RootNamespace>iStore.Data.Access.DataAccessCommonMeta</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessCommonMeta\DataAccessCommonMeta.csproj" />
     <ProjectReference Include="..\DataAcessMeta\DataAcessMeta.csproj" />
   </ItemGroup>
 

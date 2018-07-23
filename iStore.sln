@@ -102,6 +102,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleModelMeta", "Model\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeDataAccessMeta", "Tests\Data\Access\FakeDataAccessMeta\FakeDataAccessMeta.csproj", "{75CC29AB-431D-4F17-93C4-663884F14187}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessCommonMeta", "Data\Access\DataAccessCommonMeta\DataAccessCommonMeta.csproj", "{84388B0B-072A-439F-A7B0-553F2A7B3A9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessCommon", "Data\Access\DataAccessCommon\DataAccessCommon.csproj", "{750C7758-3AC4-4DF4-956B-7581BCD2C9F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -208,6 +212,14 @@ Global
 		{75CC29AB-431D-4F17-93C4-663884F14187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75CC29AB-431D-4F17-93C4-663884F14187}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75CC29AB-431D-4F17-93C4-663884F14187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84388B0B-072A-439F-A7B0-553F2A7B3A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84388B0B-072A-439F-A7B0-553F2A7B3A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84388B0B-072A-439F-A7B0-553F2A7B3A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84388B0B-072A-439F-A7B0-553F2A7B3A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750C7758-3AC4-4DF4-956B-7581BCD2C9F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750C7758-3AC4-4DF4-956B-7581BCD2C9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750C7758-3AC4-4DF4-956B-7581BCD2C9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750C7758-3AC4-4DF4-956B-7581BCD2C9F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -252,6 +264,8 @@ Global
 		{3425033E-2E20-4428-9F66-9CC1537D79BA} = {B464ABC0-0BE2-4C03-B092-56CF8B8EB7FD}
 		{CED27404-59A4-4BAA-A3E0-9AD90CBD6578} = {D3709A02-9CDE-4D70-B16F-D66EA0358AF1}
 		{75CC29AB-431D-4F17-93C4-663884F14187} = {AB0774F3-4D6B-47AA-B3EA-9CB6C9132F8A}
+		{84388B0B-072A-439F-A7B0-553F2A7B3A9A} = {FD0FA196-2A75-4DFE-82AA-258F424B0084}
+		{750C7758-3AC4-4DF4-956B-7581BCD2C9F3} = {FD0FA196-2A75-4DFE-82AA-258F424B0084}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18A1AB14-A704-4F6F-8C48-24E3C114C8E0}
