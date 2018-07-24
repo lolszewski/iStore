@@ -64,7 +64,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsSqlEntLibDataAccess", "Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsSqlDataEntities", "Data\Access\Sources\MsSql\MsSqlDataEntities\MsSqlDataEntities.csproj", "{80C5E4DD-887F-447E-8A75-67D34F749131}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataEntitiesCommon", "Data\Access\DataEntitiesCommon\DataEntitiesCommon.csproj", "{FEDC926A-3079-403C-9B15-D657FBD5959D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataItemsCommon", "Data\Access\DataEntitiesCommon\DataItemsCommon.csproj", "{FEDC926A-3079-403C-9B15-D657FBD5959D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleModel", "Model\ArticleModel\ArticleModel.csproj", "{39F6CDD4-CA44-44D6-832E-1892681C6C84}"
 EndProject
@@ -74,7 +74,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{F90B13CD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleModelTests", "Tests\Model\ArticleModelTests\ArticleModelTests.csproj", "{28138CC7-7FED-487F-AA81-B61434711FD3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataEntitiesCommonMeta", "Data\Access\DataEntitiesCommonMeta\DataEntitiesCommonMeta.csproj", "{75DACBE2-A097-4294-B688-750B576505B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataItemsCommonMeta", "Data\Access\DataEntitiesCommonMeta\DataItemsCommonMeta.csproj", "{75DACBE2-A097-4294-B688-750B576505B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{EC538FB1-57BA-4008-A42A-921CCBC32077}"
 EndProject
@@ -100,9 +100,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreCommon", "Core\CoreComm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleModelMeta", "Model\ArticleModelMeta\ArticleModelMeta.csproj", "{CED27404-59A4-4BAA-A3E0-9AD90CBD6578}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeDataAccessMeta", "Tests\Data\Access\FakeDataAccessMeta\FakeDataAccessMeta.csproj", "{75CC29AB-431D-4F17-93C4-663884F14187}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakeDataAccessMeta", "Tests\Data\Access\FakeDataAccessMeta\FakeDataAccessMeta.csproj", "{75CC29AB-431D-4F17-93C4-663884F14187}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessCommonMeta", "Data\Access\DataAccessCommonMeta\DataAccessCommonMeta.csproj", "{84388B0B-072A-439F-A7B0-553F2A7B3A9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessCommonMeta", "Data\Access\DataAccessCommonMeta\DataAccessCommonMeta.csproj", "{84388B0B-072A-439F-A7B0-553F2A7B3A9A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessCommon", "Data\Access\DataAccessCommon\DataAccessCommon.csproj", "{750C7758-3AC4-4DF4-956B-7581BCD2C9F3}"
 EndProject

@@ -1,10 +1,10 @@
 ﻿using System;
-using DataEntitiesCommonMeta;
 using iStore.Data.Access.DataAccessMeta;
+using iStore.Data.Access.DataItemsCommonMeta;
 
 namespace iStore.Data.Access.DataEntitiesCommon
 {
-    public class DataEntityConfigurationItem : IDataEntityConfigurationItem
+    public class DataItemConfiguration : IDataItemConfiguration
     {
         public Type DataItemType { get; set; }
 

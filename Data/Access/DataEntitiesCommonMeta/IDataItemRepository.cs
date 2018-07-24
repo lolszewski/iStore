@@ -1,12 +1,11 @@
-﻿using DataEntitiesCommonMeta;
-using iStore.Core.Meta;
+﻿using iStore.Core.Meta;
 using iStore.Data.Access.DataAccessMeta;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace iStore.Data.Access.DataEntitiesCommon
+namespace iStore.Data.Access.DataItemsCommonMeta
 {
-    public interface IDataEntitiesRepository
+    public interface IDataItemRepository
         <
             DataItemType,
             DataIdentifierType,
@@ -28,6 +27,6 @@ namespace iStore.Data.Access.DataEntitiesCommon
 
         Task Delete<T>(DataDeleteSelectionType query);
 
-        void Configure<T>(IDataEntityConfigurationItem configuration) where T : IDataItem;
+        void Configure<T>(IDataItemConfiguration configuration) where T : IDataItem;
     }
 }

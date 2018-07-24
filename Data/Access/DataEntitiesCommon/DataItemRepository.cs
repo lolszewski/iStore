@@ -1,27 +1,27 @@
-﻿using DataEntitiesCommonMeta;
-using iStore.Data.Access.DataAccessMeta;
+﻿using iStore.Data.Access.DataAccessMeta;
+using iStore.Data.Access.DataItemsCommonMeta;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace iStore.Data.Access.DataEntitiesCommon
+namespace iStore.Data.Access.DataItemsCommon
 {
-    public class DataEntitiesRepository
+    public class DataItemRepository
         <
             DataItemType,
             DataIdentifierType,
             DataGetManyelectionType,
             DataDeleteSelectionType
-        > : IDataEntitiesRepository<DataItemType, DataIdentifierType, DataGetManyelectionType, DataDeleteSelectionType>
+        > : IDataItemRepository<DataItemType, DataIdentifierType, DataGetManyelectionType, DataDeleteSelectionType>
             where DataItemType : IDataItem
             where DataIdentifierType : IDataIdentifier
             where DataGetManyelectionType : IDataSelection
             where DataDeleteSelectionType : IDataSelection
     {
-        private readonly ConcurrentDictionary<Type, IDataEntityConfigurationItem> Entities = new ConcurrentDictionary<Type, IDataEntityConfigurationItem>();
+        private readonly ConcurrentDictionary<Type, IDataItemConfiguration> Entities = new ConcurrentDictionary<Type, IDataItemConfiguration>();
 
-        public void Configure<T>(IDataEntityConfigurationItem configuration) where T : IDataItem
+        public void Configure<T>(IDataItemConfiguration configuration) where T : IDataItem
         {
             Entities.TryAdd(typeof(T), configuration);
         }

@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>iStore.Data.Access.DataEntitiesCommon</AssemblyName>
-    <RootNamespace>iStore.Data.Access.DataEntitiesCommon</RootNamespace>
+    <AssemblyName>iStore.Data.Access.DataItemsCommon</AssemblyName>
+    <RootNamespace>iStore.Data.Access.DataItemsCommon</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataAcessMeta\DataAcessMeta.csproj" />
-    <ProjectReference Include="..\DataEntitiesCommonMeta\DataEntitiesCommonMeta.csproj" />
+    <ProjectReference Include="..\DataEntitiesCommonMeta\DataItemsCommonMeta.csproj" />
   </ItemGroup>
 
 </Project>

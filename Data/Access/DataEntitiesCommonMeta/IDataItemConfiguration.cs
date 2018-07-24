@@ -2,9 +2,9 @@
 using iStore.Data.Access.DataAccessMeta;
 using System;
 
-namespace DataEntitiesCommonMeta
+namespace iStore.Data.Access.DataItemsCommonMeta
 {
-    public interface IDataEntityConfigurationItem : IService
+    public interface IDataItemConfiguration : IService
     {
         void Configure(Type dataItemType, IDataAccess dataAccess, IDataLocation dataLocation);
 
