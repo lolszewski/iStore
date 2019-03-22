@@ -21,10 +21,8 @@ namespace iStore.Data.Access.Sources.MsSql.MsSqlEntLibDataAccess
                 Databases.TryAdd(connectionString, createdDatabase);
             }
 
-            new object();
-
             Databases.TryGetValue(connectionString, out var database);
-
+            
             return database;
         }
     }

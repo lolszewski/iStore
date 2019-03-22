@@ -1,4 +1,6 @@
-﻿using iStore.Core.CoreCommon;
+﻿using iStore.Common.ClassLoading.ServiceLoading;
+using iStore.Core.CoreCommon;
+using iStore.Core.Meta;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,18 +9,16 @@ namespace iStore.Common.ClassLoading
 {
     public class ClassesLoader : StaticInstance<ClassesLoader>
     {
-        private static IEnumerable<Type> CachedClasses;
-
         static ClassesLoader()
         {
-            CachedClasses = AssembliesLoader.Instance.GetAll()
+            ClassesContainer.Instance.Data = AssembliesLoader.Instance.GetAll()
                 .Select(a => a.GetTypes().Where(t => !t.IsInterface))
                 .Aggregate((first, second) => first.Concat(second));
         }
 
         public IEnumerable<Type> GetAll()
         {
-            return CachedClasses;
+            return ClassesContainer.Instance.Data;
         }
     }
 }

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>iStore.Data.Access.Sources.MsSql.MsSqlDataEntitiesMeta</AssemblyName>
-    <RootNamespace>iStore.Data.Access.Sources.MsSql.MsSqlDataEntitiesMeta</RootNamespace>
+    <AssemblyName>iStore.Data.Access.Sources.MsSql.MsSqlDataItemsMeta</AssemblyName>
+    <RootNamespace>iStore.Data.Access.Sources.MsSql.MsSqlDataItemsMeta</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

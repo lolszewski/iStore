@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Core\CoreCommon\CoreCommon.csproj" />
     <ProjectReference Include="..\MsSqlDataAccessMeta\MsSqlDataAccessMeta.csproj" />
+    <ProjectReference Include="..\MsSqlDataEntitiesMeta\MsSqlDataItemsMeta.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,8 @@ namespace iStore.Data.Access.DataAccessMeta
 {
     public interface IDataAccess : IService
     {
+        IDataLocation DataLocation { set; }
+
         Task<IDataIdentifier> Create(IDataItem entity);
 
         Task<IDataItem> Read(IDataIdentifier identifier);
@@ -15,5 +17,18 @@ namespace iStore.Data.Access.DataAccessMeta
         Task<IDataItem> Update(IDataItem entity);
 
         Task Delete(IDataSelection query);
+    }
+
+    public interface IDataAccess<DataLocationType, DataIdentifierType, DataItemType, DataSelectionType> : IService
+    {
+        DataLocationType DataLocation { get; set; }
+
+        Task<DataIdentifierType> Create(DataItemType entity);
+
+        Task<IEnumerable<DataItemType>> Read(DataSelectionType query);
+
+        Task<int> Update(DataSelectionType query, DataItemType entity);
+
+        Task<int> Delete(DataSelectionType query);
     }
 }

@@ -6,4 +6,8 @@
     <RootNamespace>iStore.Core.CoreCommon</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoreMeta\CoreMeta.csproj" />
+  </ItemGroup>
+
 </Project>

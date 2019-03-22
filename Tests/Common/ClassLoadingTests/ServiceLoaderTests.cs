@@ -69,5 +69,11 @@ namespace iStore.Tests.Common.ClassLoadingTests
             fakeNestedInterfaceLevel3.StringField.Should().NotBe(default(string));
             fakeNestedInterfaceLevel3.StringsList.Should().HaveCountGreaterThan(default(int));
         }
+
+        [TestMethod]
+        public void ShouldLoadServicesImplementationWithGenericParameter()
+        {
+            ServiceLoader.Instance.GetService<IFakeGenericInterfaceForGenericParameterTest<FakeGenericParameter>>();
+        }
     }
 }

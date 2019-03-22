@@ -7,53 +7,37 @@ using System.Threading.Tasks;
 
 namespace iStore.Data.Access.DataItemsCommon
 {
-    public class DataItemRepository
-        <
-            DataItemType,
-            DataIdentifierType,
-            DataGetManyelectionType,
-            DataDeleteSelectionType
-        > : IDataItemRepository<DataItemType, DataIdentifierType, DataGetManyelectionType, DataDeleteSelectionType>
-            where DataItemType : IDataItem
-            where DataIdentifierType : IDataIdentifier
-            where DataGetManyelectionType : IDataSelection
-            where DataDeleteSelectionType : IDataSelection
+    public class DataItemRepository : IDataItemRepository
     {
         private readonly ConcurrentDictionary<Type, IDataItemConfiguration> Entities = new ConcurrentDictionary<Type, IDataItemConfiguration>();
 
-        public void Configure<T>(IDataItemConfiguration configuration) where T : IDataItem
+        public IDataAccess DataAccess { get; set; }
+
+        public IDataLocation DataLocation { get; set; }
+
+        public async Task<T> Create<T>(IDataItem entity) where T : IDataIdentifier
         {
-            Entities.TryAdd(typeof(T), configuration);
+            return (T)await DataAccess.Create(entity);
         }
 
-        public async Task<DataIdentifierType> Create(DataItemType entity)
+        public async Task Delete<T>(IDataSelection query)
         {
-            Entities.TryGetValue(entity.GetType(), out var repo);
-            return (DataIdentifierType)await repo.GetDataAccess().Create(entity);
+            await DataAccess.Delete(query);
         }
 
-        public async Task Delete<T>(DataDeleteSelectionType query)
+        public async Task<T> Read<T>(IDataIdentifier identifier) where T : IDataItem
         {
-            Entities.TryGetValue(typeof(T), out var repo);
-            await repo.GetDataAccess().Delete(query);
+            return (T)await DataAccess.Read(identifier);
         }
 
-        public async Task<DataItemType> Read<T>(DataIdentifierType identifier)
+        public async Task<IEnumerable<T>> ReadMany<T>(IDataSelection query) where T : IDataItem
         {
-            Entities.TryGetValue(typeof(T), out var repo);
-            return (DataItemType)await repo.GetDataAccess().Read(identifier);
+            return (IEnumerable<T>)await DataAccess.ReadMany(query);
         }
 
-        public async Task<IEnumerable<DataItemType>> ReadMany<T>(DataGetManyelectionType query)
+        public async Task<T> Update<T>(T entity) where T : IDataItem
         {
-            Entities.TryGetValue(typeof(T), out var repo);
-            return (IEnumerable<DataItemType>)await repo.GetDataAccess().ReadMany(query);
-        }
-
-        public async Task<DataItemType> Update(DataItemType entity)
-        {
-            Entities.TryGetValue(entity.GetType(), out var repo);
-            return (DataItemType)await repo.GetDataAccess().Update(entity);
+            return (T)await DataAccess.Update(entity);
         }
     }
 }

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>iStore.Data.Access.Sources.MsSql.MsSqlDataItems`</AssemblyName>
+    <RootNamespace>iStore.Data.Access.Sources.MsSql.MsSqlDataItems</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MsSqlDataEntitiesMeta\MsSqlDataItemsMeta.csproj" />
+  </ItemGroup>
+
+</Project>

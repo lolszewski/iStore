@@ -1,8 +1,8 @@
-﻿using iStore.Data.Access.Sources.MsSql.MsSqlDataEntitiesMeta;
+﻿using iStore.Data.Access.Sources.MsSql.MsSqlDataItemsMeta;
 
 namespace iStore.Data.Access.Sources.MsSql.MsSqlDataEntities
 {
-    public class MsSqlDataEntityLocation : IMsSqlDataEntityLocation
+    public class MsSqlDataItemLocation : IMsSqlDataItemLocation
     {
         private string ConnectionString { get; set; }
 

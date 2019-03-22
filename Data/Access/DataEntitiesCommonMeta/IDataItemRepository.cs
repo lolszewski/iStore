@@ -5,28 +5,20 @@ using System.Threading.Tasks;
 
 namespace iStore.Data.Access.DataItemsCommonMeta
 {
-    public interface IDataItemRepository
-        <
-            DataItemType,
-            DataIdentifierType,
-            DataGetManyelectionType,
-            DataDeleteSelectionType
-        > : IService
-        where DataItemType : IDataItem
-        where DataIdentifierType : IDataIdentifier
-        where DataGetManyelectionType : IDataSelection
-        where DataDeleteSelectionType : IDataSelection
+    public interface IDataItemRepository : IService
     {
-        Task<DataIdentifierType> Create(DataItemType entity);
+        IDataAccess DataAccess { get; set; }
 
-        Task<DataItemType> Read<T>(DataIdentifierType identifier);
+        IDataLocation DataLocation { get; set; }
 
-        Task<IEnumerable<DataItemType>> ReadMany<T>(DataGetManyelectionType query);
+        Task<T> Create<T>(IDataItem entity) where T : IDataIdentifier;
 
-        Task<DataItemType> Update(DataItemType entity);
+        Task<T> Read<T>(IDataIdentifier identifier) where T : IDataItem;
 
-        Task Delete<T>(DataDeleteSelectionType query);
+        Task<IEnumerable<T>> ReadMany<T>(IDataSelection query) where T : IDataItem;
 
-        void Configure<T>(IDataItemConfiguration configuration) where T : IDataItem;
+        Task<T> Update<T>(T entity) where T : IDataItem;
+
+        Task Delete<T>(IDataSelection query);
     }
 }

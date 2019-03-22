@@ -10,6 +10,8 @@ namespace iStore.Tests.Data.Access.FakeDataAccess
 {
     public class FakeDataAccess : IFakeDataAccess
     {
+        public IDataLocation DataLocation { get; set; }
+
         public Task<IDataIdentifier> Create(IDataItem entity)
         {
             return Task.FromResult<IDataIdentifier>(this.NewService<ISingleValueDataIdentifier<int>>().WithValue(123));

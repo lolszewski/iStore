@@ -15,8 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\ClassLoading\ClassLoading.csproj" />
-    <ProjectReference Include="..\..\..\Data\Access\DataEntitiesCommonMeta\DataItemsCommonMeta.csproj" />
-    <ProjectReference Include="..\..\..\Data\Access\DataEntitiesCommon\DataItemsCommon.csproj" />
     <ProjectReference Include="..\..\..\Data\Access\DataIdentifiers\DataIdentifiers.csproj" />
     <ProjectReference Include="..\..\..\Model\ArticleModel\ArticleModel.csproj" />
   </ItemGroup>
